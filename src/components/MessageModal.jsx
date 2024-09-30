@@ -44,7 +44,7 @@ function MessageModal({ showMessageModal, closeAll3, isConnecting }) {
                                     <p className='text-shadow text-2xl text-teal-600 font-semibold mt-5 flex items-center justify-start'>
                                         <img src={DarkPerson} alt="DarkWeb2" className='h-16 w-28' />
                                         You need to purchase deduction card on the dark web.</p>
-                                    <Link to={"/"} className='border border-red-600 inline-block mt-8 px-4 py-2 rounded-lg text-white hover:bg-red-600 transition duration-300'>Go back</Link>
+                                    <Link to={"/home"} className='border border-red-600 inline-block mt-8 px-4 py-2 rounded-lg text-white hover:bg-red-600 transition duration-300'>Go back</Link>
                                 </div>
                             </>
                             )
