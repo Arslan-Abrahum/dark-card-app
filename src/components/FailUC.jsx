@@ -47,6 +47,8 @@ function FailedUC() {
   const [showContinueButton, setShowContinueButton] = useState(false);
   const [modalContentVisible, setModalContentVisible] = useState(false);
 
+  const [isConnecting, setIsConnecting] = useState(false)
+
   const [InfoObj, setInfoObj] = useState(
     {
       CardInfo: "",
@@ -191,6 +193,11 @@ function FailedUC() {
       setInfoArr([...InfoArr, InfoObj])
       setShowCardModel(false)
       setshowMessageModal(true)
+      setIsConnecting(true)
+      setTimeout( ()=> {
+        setIsConnecting(false)
+      }, 3000 )
+
       setInfoObj(
         {
           CardInfo: "",
@@ -211,7 +218,6 @@ function FailedUC() {
   const closeAll3 = () => {
     setIsModalOpen(false)
     setIsConnecting(false)
-    setHasError(false)
     setShowCardModel(false)
   }
 
@@ -276,7 +282,7 @@ function FailedUC() {
             </>
           ) : showMessageModal ? (
             <>
-              <MessageModal showMessageModal={showMessageModal} closeAll3={closeAll3} />
+              <MessageModal isConnecting={isConnecting} showMessageModal={showMessageModal} closeAll3={closeAll3} />
             </>
           ) : null
         }
